@@ -72,17 +72,18 @@ function renderGame() {
   sumEl.textContent = "Sum: " + sum;
 }
 
-newBtn.addEventListener("click", newCard);
 
 function newCard() {
     if (isAlive === true && hasBlackJack === false){
-        let card = getRandomCard();
+      let card = getRandomCard();
         sum += card;
         cards.push(card);                              //pushes that new card into the cards array
         renderGame();                                 // gets another card
         console.log(card);
         console.log(sum);
-    } else {
+      } else {
         return
+      }
     }
-}
+    
+    newBtn.addEventListener("click", newCard);
